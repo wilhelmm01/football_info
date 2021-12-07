@@ -1,0 +1,12 @@
+section h4 {
+    text-align: center;
+}
+
+.tile {
+    text-align: center;
+    margin: auto;
+}
+
+body {
+    background-color: lightgrey;
+}

@@ -1,3 +1,5 @@
+$(document).foundation()
+
 const cfbd = require('cfb.js');
 
 const defaultClient = cfb.ApiClient.instance;
