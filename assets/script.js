@@ -14,3 +14,6 @@ const games = await api.getGames(year);
 // // base URL
 
 // api.collegefootballdata.com/
+
+//weather API - 
+ApiKeyAuth.apiKey = "aef20bc076b6576a68a8168ed03dc6dc";
