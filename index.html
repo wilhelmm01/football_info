@@ -9,16 +9,21 @@
 </head>
 <body>
     <header>
-        <h3>Title</h3>
+        <h3></h3>
         <!--Add Background and/or pic-->
     </header>
-<section id="teamInput">
-    <div class="search"></div>
+<form id="teamInput">
+    <div class="search">
+        <label for="city">City</label>
+        <input type="text" placeholder="City" id="city">
+        <button type="button" id="city-btn">Click me</button>
+    </div>
     <div class="favorite"></div>
-</section>
+</form>
 
 <section class="results">
-    <div id="upcoming">
+    <div id="upcoming" class = "upcoming">
+        
         <!--returns schedule and weather for 2 weeks-->
     </div>
     <div id="schedule">
@@ -33,5 +38,8 @@
 </body>
 
 <script src="assets/script.js"></script>
+
+</script>
+
 
 </html>

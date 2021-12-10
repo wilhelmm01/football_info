@@ -2,22 +2,16 @@ var key = "ca90b1ee3ee78f78b6f96f9d4ec5800a"
 var gameForecast = document.getElementById("upcoming");
 
 
-
-
-
-//Retreiving Weather function
 function getWeatherApi() {
 
     //Retreiving city from clicking button
     document.getElementById("city-btn").onclick = function(place) {
         var place = document.getElementById("city").value;
         console.log("Location is " +place)
-
-
         
     //API URL
     var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + place + "&units=imperial&appid=" + key;
-     
+     //var requestURL  =  "http://api.openweathermap.org/data/2.5/onecall/timemachine?q=" + place +"&units=imperial&appid=" + key;
     console.log("API Link: " + requestURL)  
     
     fetch(requestURL)
@@ -32,10 +26,6 @@ function getWeatherApi() {
                 console.log("High Temp " + data.main.temp_max + "°F");
                 console.log("Low Temp " + data.main.temp_min + "°F");
                 console.log ("Wind Speed " +data.wind.speed + " MPH")
-                console.log ("dt " + data.dt);
-                
-
-                
                 
 
 
@@ -55,6 +45,8 @@ function getWeatherApi() {
                var windSpeed = document.createElement('p');
                windSpeed.textContent="Wind: " + parseInt(data.wind.speed)  + " MPH";
 
+               
+
                 var icons = document.createElement("img")
                 var conditions = data.weather[0].description;
                 console.log("Conditions: " + conditions)
@@ -69,7 +61,7 @@ function getWeatherApi() {
                     icons.src === "assets/Images/sunny-icon.png"
                 } else if (conditions = "partly cloudy"){
                     icons.src === "assets/Images/partly-cloudy.png"
-                } else if (conditions = "rain" || "mist" || "light rain"){
+                } else if (conditions = "rain" || "mist"){
                     icons.src ===  "assets/Images/rain-icon.png"
                 } else if (conditions = "snow"){
                     icons.src === "assets/Images/snow-icon.png"
@@ -82,18 +74,9 @@ function getWeatherApi() {
               gameForecast.appendChild(windSpeed);
               gameForecast.appendChild(highTemp);
               gameForecast.appendChild(lowTemp);
-
                         
         });
     }
 }
 
 getWeatherApi();
-
-//http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=60.99&lon=30.9&dt=1586468027&appid={API key}
-
-
-
-
-
-//"https://api.openweathermap.org/data/2.5/weather?q=Columbus&units=imperial&appid=ca90b1ee3ee78f78b6f96f9d4ec5800a"

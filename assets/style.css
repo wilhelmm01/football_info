@@ -1,0 +1,29 @@
+.upcoming {
+    background-color: rgb(197, 199, 202);
+    color:black;
+    text-align:  center;
+    padding: 5px;
+    margin: 1px;
+}
+
+.upcoming p {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+
+
+}
+
+.upcoming h3 {
+font-size: 40px;
+margin-top: 0px;
+padding-top: 0px;
+margin-bottom: 0px;
+}
+
+.upcoming h4 {
+    padding-top: 0px;
+    margin-top: 0px;
+}
