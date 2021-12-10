@@ -1,0 +1,18 @@
+section h6 {
+    text-align: center;
+    font-style: bold;
+}
+
+.tile {
+    text-align: center;
+    margin: auto;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+
+/*.hero {
+    background-image: url(./images/football-870283_1920.jpg);
+}
