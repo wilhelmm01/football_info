@@ -1,42 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css" />
- <title>Football Info</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Event Weather Companion</title>
 </head>
+
 <body>
-    <header>
-        <h3>Title</h3>
-        <!--Add Background and/or pic-->
-    </header>
-<section id="cityInput">
-    <form id="cityInput">
-        <div class="search">
-            <label for="city">City</label>
-            <input type="text" placeholder="City" id="city">
-            <button type="button" id="city-btn">Click me</button>
+
+    <!--test-->
+    <section class="hero is-small is-primary has-background-link is-mobile">
+        <div class="hero-body">
+            <h6 class="title has-text-white is-mobile">
+                Live Event Weather Companion
+            </h6>
         </div>
-    <div class="favorite"></div>
-</section>
+    </section>
 
-<section class="results">
-    <div id="upcoming">
-        <!--returns schedule and weather for 2 weeks-->
-    </div>
-    <div id="schedule">
-        <!--return schedule-->
-    </div>
-</section>
 
-<footer>
-    <!--link to live score page-->
-</footer>    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input" type="text" placeholder="Search for an event that you would like to attend!">
+                        </p>
+                        <p class="control">
+                            <a class="button is-info">
+                                Search
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="column is-6 has-background-info-dark has has-text-white box">
+                    <h3>Desired Event</h3>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical box has-background-success-dark is-8">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child box">
+                            <p class="title"> (2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate soluta dolor at voluptas, sequi quas enim magni laudantium quo cumque. </p>
+                        </article>
+                    </div>
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child box">
+                            <p class="title">3Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate soluta dolor at voluptas, sequi quas enim magni laudantium quo cumque.</p>
+
+                        </article>
+
+                    </div>
+                </div>
+                <div class="tile is-parent is-12">
+                    <article class="tile is-child notification has-text-black">
+                        <p class="title">5Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate soluta dolor at voluptas, sequi quas enim magni laudantium quo cumque.</p>
+                        <div class="content">
+                            <!-- Content -->
+                        </div>
+    </section>
+
+
+
+    <section class="section">
+        <div class="container box">
+            <div class="columns is-mobile">
+                <div class="column is-full has-background-info-dark has-text-white">
+                    <div class="column is-6">
+                        <p>Schedule <br><br> Team Name <br><br> Year Schedule Including Wins & Losses</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container box">
+            <div class="columns is-mobile">
+                <div class="column is-full has-background-link">
+                    <button class="button is-focused is-centered">
+                        <a href="https://www.ncaa.com/scoreboard/football/fbs">Click here to see live scores!</a>
+                    </button>
+                </div>
+            </div>
+    </section>
+
+<script src="assets/event.js"></script> 
+<script src="assets/weather.js"></script>
+
+
 
 </body>
-
-<script src="assets/script.js"></script>
 
 </html>
