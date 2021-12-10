@@ -12,6 +12,11 @@ body {
     background-color: lightgrey;
 }
 
+.weather-box {
+    background-color: blue;
+    color: white;
+}
+
 
 /*.hero {
     background-image: url(./images/football-870283_1920.jpg);
