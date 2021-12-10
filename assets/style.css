@@ -1,5 +1,6 @@
-section h4 {
+section h6 {
     text-align: center;
+    font-style: bold;
 }
 
 .tile {
@@ -9,4 +10,9 @@ section h4 {
 
 body {
     background-color: lightgrey;
+}
+
+
+/*.hero {
+    background-image: url(./images/football-870283_1920.jpg);
 }
