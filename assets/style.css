@@ -17,6 +17,32 @@ body {
     color: white;
 }
 
+.forecast {
+    display: inline-flex;
+    justify-content: space-between;
+    border: black;
+    border-color: black;
+    background-color: blue;
+    color: white;
+    font-size: small;
+}
+
+.forecast div {
+margin: 100 px;
+padding: 30px;
+border-color: white;
+border-width: 10px;
+font-size: large;
+}
+
+.forecast p {
+    font-size: small;
+}
+
+.forecast h3 {
+    font-size: small;
+}
+
 
 /*.hero {
     background-image: url(./images/football-870283_1920.jpg);

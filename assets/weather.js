@@ -2,17 +2,17 @@ var key = "ca90b1ee3ee78f78b6f96f9d4ec5800a"
 var gameForecast = document.getElementById("upcoming");
 var weatherForecast = document.getElementById("forecast");
 var currentEvent = document.getElementById("currentEvent")
+var favorityCity = document.getElementById("saveCity");
 
 //Retreiving Weather function
 function getWeatherApi() {
 
     //Retreiving city from clicking button
     document.getElementById("city-btn").onclick = function(city) {
-    var city = document.getElementById("city").value; 
+    var city = document.getElementById("city").value;
     console.log(city)
-        
+    ;    
 
-        
     //Current Forecast
     var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + key;
      
@@ -109,14 +109,14 @@ function getWeatherApi() {
                               currentEvent.appendChild(eventName);
                               currentEvent.appendChild(startTime);
                               currentEvent.appendChild(date);
-                              currentEvent.appendChild(time);
+                              ;
                           });
                       
                   
                   
                         
 //5-day forecast        
-        var forecastURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly&appid=" + key;
+        var forecastURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly&units=imperial&appid=" + key;
         fetch(forecastURL)
         .then(function (response) {
             return response.json();
@@ -127,24 +127,51 @@ function getWeatherApi() {
 
             for (var i=1; i<8 ;i++){
                var futureDateResponse = (response.daily[i].dt);
-               var fd = new Date(i);
-               fd.setUTCSeconds(futureDateResponse);
+               var forecastDate = new Date(i);
+               forecastDate.setUTCSeconds(futureDateResponse);
+               var futureDate = forecastDate;
+               var forecastMonth = futureDate.getMonth()+1;
+               var forecastDay = futureDate.getDate();
+               var forecastYear = futureDate.getFullYear();
 
 
-               var fiveDay = document.createElement("h1");
-               fiveDay.textContent = fd;
+               var fdOutput = forecastMonth + "/" + forecastDay + "/" + forecastYear
+               
+               
+               
 
-                weatherForecast.appendChild(fiveDay);
+               var fiveDay = document.createElement("div");
+               fiveDay.textContent=fdOutput
+               
+                
 
-                console.log(fd);
+
+               weatherForecast.appendChild(fiveDay);
+                
+               var highForecast=document.createElement("h3");
+               highForecast.textContent ="High Temp: " + parseInt(response.daily[i].temp.max)+ "° F" ;
+
+               var lowForecast = document.createElement("h3");
+               lowForecast.textContent ="Low Temp: " + parseInt(response.daily[i].temp.min)+ "° F";
+
+               var forecastDescription = document.createElement("p");
+               forecastDescription.textContent = (response.daily[i].weather[0].description);
+
+
+                fiveDay.appendChild(highForecast);
+                fiveDay.appendChild(lowForecast);
+                fiveDay.appendChild(forecastDescription);
+                console.log(fdOutput);
+                console.log( "High temp " + response.daily[i].temp.max)
+                console.log("low temp " +response.daily[i].temp.min );
+                console.log("description " + response.daily[i].weather[0].description)
             }
 
         })
         });
     
     }
- }     //5 day forecase
-
+ }    
     
 
 getWeatherApi();
