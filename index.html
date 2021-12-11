@@ -28,7 +28,7 @@
                 <div class="column is-6">
                     <div class="field is-grouped">
                         <p class="control is-expanded">
-                            <input class="input" id="city" type="text" placeholder="Search for an event that you would like to attend!">
+                            <input class="input" type="text" id ="city" placeholder="Search for events in your location">
                         </p>
                         <p class="control">
                             <a class="button is-info" id="city-btn">
@@ -48,14 +48,15 @@
             <div class="tile is-vertical box has-background-success-dark is-8">
                 <div class="tile">
                     <div class="tile is-parent is-vertical">
-                        <article class="tile is-child box" id="city">
-                            <p class="title">Event</p>
-                            <div id="upcoming"></div>
+                        <article class="tile is-child box">
+                            <p class="title"> List of events for current day </p>
+                            <div id="currentEvent"></div>
                         </article>
                     </div>
                     <div class="tile is-parent is-vertical">
                         <article class="tile is-child box">
-                            <p class="title">3Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate soluta dolor at voluptas, sequi quas enim magni laudantium quo cumque.</p>
+                            <p class="title">Weather</p>
+                            <div id="upcoming" class="weather-box"></div>
 
                         </article>
 
@@ -63,10 +64,9 @@
                 </div>
                 <div class="tile is-parent is-12">
                     <article class="tile is-child notification has-text-black">
-                        <p class="title">5Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate soluta dolor at voluptas, sequi quas enim magni laudantium quo cumque.</p>
-                        <div class="content">
-                            <!-- Content -->
-                        </div>
+                        <p class="title"></p>
+                        <div class="content" id="forecast">
+                            <!-- Content --></div>
     </section>
 
 
