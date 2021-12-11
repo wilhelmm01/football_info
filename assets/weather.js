@@ -51,23 +51,23 @@ function getWeatherApi() {
                 
                 //Creating the elements for display
 
-               var currentDate = document.createElement('h2');
+            var currentDate = document.createElement('h2');
                 currentDate.textContent= monthOutput + "/" + dayOutput + "/" + dOutput;
 
-               var currentTemp = document.createElement('h3');
-               currentTemp.textContent = parseInt(data.main.temp)+ "° F" ;
+            var currentTemp = document.createElement('h3');
+            currentTemp.textContent = parseInt(data.main.temp)+ "° F" ;
 
-               var feelsLike = document.createElement('h4');
-               feelsLike.textContent="Feels Like " + parseInt(data.main.feels_like) + "° F";
+            var feelsLike = document.createElement('h4');
+            feelsLike.textContent="Feels Like " + parseInt(data.main.feels_like) + "° F";
 
-               var highTemp = document.createElement('p');
-               highTemp.textContent="H: " + parseInt(data.main.temp_max) + "° F";
+            var highTemp = document.createElement('p');
+            highTemp.textContent="H: " + parseInt(data.main.temp_max) + "° F";
 
-               var lowTemp = document.createElement('p');
-               lowTemp.textContent="L: " + parseInt(data.main.temp_min) + "° F";
+            var lowTemp = document.createElement('p');
+            lowTemp.textContent="L: " + parseInt(data.main.temp_min) + "° F";
 
-               var windSpeed = document.createElement('p');
-               windSpeed.textContent="Wind: " + parseInt(data.wind.speed)  + " MPH";
+            var windSpeed = document.createElement('p');
+            windSpeed.textContent="Wind: " + parseInt(data.wind.speed)  + " MPH";
 
                 //var icons = document.createElement("img")
                 var conditions = data.weather[0].description;
