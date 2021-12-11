@@ -44,7 +44,7 @@
                 var time = document.createElement('p');
                 date.textContent=(data._embedded.events[0].dates.start.localTime);
 
-                for (let i = 0; i < events.length; i++) {
+                // for (let i = 0; i < events.length; i++) {
                 
                 
                     eventForecast.appendChild(eventName);
