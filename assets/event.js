@@ -3,9 +3,9 @@
 // Ticketmaster apiKey = "aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT"
 
 
-    // fetch("https://app.ticketmaster.com/discovery/v2/events.json?size=50&city=Columbus&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT")
-    // .then(resp => resp.json())
-    // .then( json => console.log(json))
+    fetch("https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=Columbus&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT")
+    .then(resp => resp.json())
+    .then( json => console.log(json))
 
     var key = "aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT"
     var eventForecast = document.getElementById("upcoming");
@@ -19,7 +19,7 @@
             console.log("Location is " + place)
             
         //API URL
-        var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=" + place + "apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
+        var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=" + place + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
         
         // console.log("API Link: " + requestURL)  
         
@@ -30,23 +30,26 @@
             .then (function(data){
     
                     //Console Logging for testing
-                    console.log("Event " + data.name);
-                    console.log("City " + data.city);
-                    console.log("Date " + data.startDateTime);
+                    console.log("Event " + data._embedded.events[0].name);
+                    console.log("Date " + data._embedded.events[0].dates.start.localDate);
+                    console.log("Time " + data._embedded.events[0].dates.start.localTime);
     
                     //Creating the elements for display
                 var eventName = document.createElement('h3');
-                eventName.textContent = parseInt(data.name);
-    
-                var city = document.createElement('h4');
-                city.textContent= parseInt(data.city);
+                eventName.textContent =(data._embedded.events[0].name);
     
                 var date = document.createElement('p');
-                date.textContent= parseInt(data.startDateTime);
-    
-                eventForecast.appendChild(icons);
-                eventForecast.appendChild(currentTemp);
-                eventForecast.appendChild(feelsLike);
+                date.textContent=(data._embedded.events[0].dates.start.localDate);
+
+                var time = document.createElement('p');
+                date.textContent=(data._embedded.events[0].dates.start.localTime);
+
+                for (let i = 0; i < events.length; i++) {
+                
+                
+                    eventForecast.appendChild(eventName);
+                eventForecast.appendChild(date);
+                eventForecast.appendChild(time);
             });
         }
     }
