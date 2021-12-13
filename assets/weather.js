@@ -141,6 +141,7 @@ function getWeatherApi() {
                
 
                var fiveDay = document.createElement("div");
+               fiveDay.classList.add("card")
                fiveDay.textContent=fdOutput
                
                 

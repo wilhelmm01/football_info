@@ -22,7 +22,7 @@ body {
     justify-content: space-between;
     border: black;
     border-color: black;
-    background-color: blue;
+    
     color: white;
     font-size: small;
 }
@@ -43,6 +43,24 @@ font-size: large;
     font-size: small;
 }
 
+.forecast div {
+    padding: 5px;
+    margin-left: 40px;
+    background-color: rgb(226, 220, 220);
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 125px;
+    
+}
+
+.upcoming {
+    background-color: rgb(226, 220, 220);
+}
+.upcoming h2 {
+    font-size: larger;
+    font-weight: bold;
+}
 
 /*.hero {
     background-image: url(./images/football-870283_1920.jpg);
