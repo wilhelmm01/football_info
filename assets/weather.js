@@ -81,39 +81,47 @@ function getWeatherApi() {
 
 
 
-              gameForecast.appendChild(currentDate);
-              gameForecast.appendChild(currentTemp);
-              gameForecast.appendChild(feelsLike);
-              gameForecast.appendChild(windSpeed);
-              gameForecast.appendChild(highTemp);
-              gameForecast.appendChild(lowTemp);
+            gameForecast.appendChild(currentDate);
+            gameForecast.appendChild(currentTemp);
+            gameForecast.appendChild(feelsLike);
+            gameForecast.appendChild(windSpeed);
+            gameForecast.appendChild(highTemp);
+            gameForecast.appendChild(lowTemp);
 
-              
+            
 
 
-              var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
+            var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&sort=date,asc&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
                       // console.log("API Link: " + requestURL)  
-                      fetch(requestURL)
-                          .then(function (response) {
-                              return response.json();
-                          })
-                          .then (function(data){
-                                  
+                    fetch(requestURL)
+                    
+                        .then(function (response) {
+                            console.log(response)
+                            return response.json();
+                        })
+                        .then (function(data){
+
+                            for (var i=_embedded.events.length; i<9 ; i++) {
+                        
                                   //Creating the elements for display
-                              var eventName = document.createElement('h3');
-                              eventName.textContent =(data._embedded.events[0].name);
-                              var startTime = document.createElement('h4');
-                              startTime.textContent=(data._embedded.events[0].dates.start.localTime);
-                              var date = document.createElement('p');
-                              date.textContent=(data._embedded.events[0].dates.start.localDate);
-                              currentEvent.appendChild(eventName);
-                              currentEvent.appendChild(startTime);
-                              currentEvent.appendChild(date);
-                              currentEvent.appendChild(time);
-                          });
-                      
-                  
-                  
+                            var eventName = document.createElement('h3');
+                            eventName.textContent =(data._embedded.events[i].name);
+                            
+                            var startTime = document.createElement('h4');
+                            startTime.textContent=(data._embedded.events[i].dates.start.localTime);
+                            
+                            var date = document.createElement('p');
+                            date.textContent=(data._embedded.events[i].dates.start.localDate);
+                            
+                            currentEvent.appendChild(eventName);
+                            currentEvent.appendChild(startTime);
+                            currentEvent.appendChild(date);
+                            // currentEvent.appendChild(time);
+                        }
+                    });
+            
+            
+        
                         
 //5-day forecast        
         var forecastURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly&appid=" + key;
@@ -126,13 +134,13 @@ function getWeatherApi() {
             console.log( "dt" + response.daily[0].dt);
 
             for (var i=1; i<8 ;i++){
-               var futureDateResponse = (response.daily[i].dt);
-               var fd = new Date(i);
-               fd.setUTCSeconds(futureDateResponse);
+            var futureDateResponse = (response.daily[i].dt);
+            var fd = new Date(i);
+            fd.setUTCSeconds(futureDateResponse);
 
 
-               var fiveDay = document.createElement("h1");
-               fiveDay.textContent = fd;
+            var fiveDay = document.createElement("h1");
+            fiveDay.textContent = fd;
 
                 weatherForecast.appendChild(fiveDay);
 
@@ -141,9 +149,37 @@ function getWeatherApi() {
 
         })
         });
+
+        // Events for 5 day forecast
+
+        // var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=3&sort=date,desc&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
+        //               // console.log("API Link: " + requestURL)  
+        //             fetch(requestURL)
+        //                 .then(function (response) {
+        //                     return response.json();
+        //                 })
+        //                 for (var i = 0; i < response.length; i++) {
+                            // var futureEvent = (data._embedded.events.name.response.length[i])
+                            // var futureStart = ()
+                            // var futureDate = ()
+                        // }
+
+                        
+        //                           //Creating the elements for display
+        //                     var eventName = document.createElement('h3');
+        //                     eventName.textContent =(data._embedded.events[0].name);
+        //                     var startTime = document.createElement('h4');
+        //                     startTime.textContent=(data._embedded.events[0].dates.start.localTime);
+        //                     var date = document.createElement('p');
+        //                     date.textContent=(data._embedded.events[0].dates.start.localDate);
+        //                     currentEvent.appendChild(eventName);
+        //                     currentEvent.appendChild(startTime);
+        //                     currentEvent.appendChild(date);
+        //                     currentEvent.appendChild(time);
+        //                 });
     
     }
- }     //5 day forecase
+ }     //5 day forecast
 
     
 
