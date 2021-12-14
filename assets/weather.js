@@ -15,7 +15,7 @@ function getWeatherApi() {
         
     //Current Forecast
     var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + key;
-     
+    
     console.log("API Link: " + requestURL)  
     
     fetch(requestURL)
@@ -91,9 +91,9 @@ function getWeatherApi() {
             
 
 
-            var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&sort=date,asc&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
+            var requestURL2 = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&sort=date,asc&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
                       // console.log("API Link: " + requestURL)  
-                    fetch(requestURL)
+                    fetch(requestURL2)
                     
                         .then(function (response) {
                             console.log(response)
@@ -101,7 +101,7 @@ function getWeatherApi() {
                         })
                         .then (function(data){
 
-                            for (var i=0; i<data.length ; i++) {
+                            for (var i=0; i<response.length ; i++) {
                         
                                   //Creating the elements for display
                             var eventName = document.createElement('p');
