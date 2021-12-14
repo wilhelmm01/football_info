@@ -117,26 +117,37 @@ function getWeatherApi() {
 
 
 
-                var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
-                // console.log("API Link: " + requestURL)  
-                fetch(requestURL)
-                    .then(function(response) {
-                        return response.json();
-                    })
-                    .then(function(data) {
-                        //Logan adding line to clear data after one search
-                        currentEvent.innerHTML = "";
-                        //Creating the elements for display
-                        var eventName = document.createElement('h3');
-                        eventName.textContent = (data._embedded.events[0].name);
-                        var startTime = document.createElement('h4');
-                        startTime.textContent = (data._embedded.events[0].dates.start.localTime);
-                        var date = document.createElement('p');
-                        date.textContent = (data._embedded.events[0].dates.start.localDate);
-                        currentEvent.appendChild(eventName);
-                        currentEvent.appendChild(startTime);
-                        currentEvent.appendChild(date);
-                      
+                var requestURL2 = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&sort=date,asc&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
+                      // console.log("API Link: " + requestURL)  
+                    fetch(requestURL2)
+                    
+                        .then(function (response) {
+                            console.log(response)
+                            return response.json();
+                        })
+                        .then (function(data){
+                            var events = data._embedded.events;
+                            // console.log(data);
+
+                            for (var i=0; i < events.length ; i++) {
+
+                            //     var data = data.length
+                        
+                                  //Creating the elements for display
+                            var eventName = document.createElement('p');
+                            eventName.textContent =(data._embedded.events[i].name);
+                            
+                            var startTime = document.createElement('p');
+                            startTime.textContent=(data._embedded.events[i].dates.start.localTime);
+                            
+                            var date = document.createElement('p');
+                            date.textContent=(data._embedded.events[i].dates.start.localDate);
+                            
+                            currentEvent.appendChild(eventName);
+                            currentEvent.appendChild(startTime);
+                            currentEvent.appendChild(date);
+                            // currentEvent.appendChild(time);
+                        }
                     });
 
 
