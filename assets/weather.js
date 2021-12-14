@@ -100,8 +100,12 @@ function getWeatherApi() {
                             return response.json();
                         })
                         .then (function(data){
+                            var events = data._embedded.events;
+                            // console.log(data);
 
-                            for (var i=0; i<response.length ; i++) {
+                            for (var i=0; i < events.length ; i++) {
+
+                            //     var data = data.length
                         
                                   //Creating the elements for display
                             var eventName = document.createElement('p');
