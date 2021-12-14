@@ -101,13 +101,13 @@ function getWeatherApi() {
                         })
                         .then (function(data){
 
-                            for (var i=_embedded.events.length; i<9 ; i++) {
+                            for (var i=0; i<data.length ; i++) {
                         
                                   //Creating the elements for display
-                            var eventName = document.createElement('h3');
+                            var eventName = document.createElement('p');
                             eventName.textContent =(data._embedded.events[i].name);
                             
-                            var startTime = document.createElement('h4');
+                            var startTime = document.createElement('p');
                             startTime.textContent=(data._embedded.events[i].dates.start.localTime);
                             
                             var date = document.createElement('p');
@@ -152,7 +152,7 @@ function getWeatherApi() {
 
         // Events for 5 day forecast
 
-        // var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=3&sort=date,desc&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
+        // var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=3&sort=date,asc&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
         //               // console.log("API Link: " + requestURL)  
         //             fetch(requestURL)
         //                 .then(function (response) {
