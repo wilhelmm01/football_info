@@ -18,6 +18,7 @@
             <h6 class="title has-text-white is-mobile">
                 Live Event Weather Companion
             </h6>
+            <p>Search for a city that you would like to travel to below. <br> We will then provide you with both a live event and a weather forecast in your chosen city in order to help you plan!</p><br>
         </div>
     </section>
 
@@ -28,7 +29,7 @@
                 <div class="column is-6">
                     <div class="field is-grouped">
                         <p class="control is-expanded">
-                            <input class="input" type="text" id ="city" placeholder="Search for events in your location">
+                            <input class="input" type="text" id="city" placeholder="What city would you like to visit?">
                         </p>
                         <p class="control">
                             <a class="button is-info" id="city-btn">
@@ -37,65 +38,59 @@
                         </p>
                     </div>
                 </div>
-                <div class="column is-6 has-background-info-dark has has-text-white box">
-                    <h3>Desired Event</h3>
+                <div id="cityList" class="has-text-white has-background-info-dark column is-6 box is-mobile ">
+                    <h2 class="title is-6 has-text-white is-underlined">Previously Searched Cities</h2>
                 </div>
-            </div>
     </section>
+
+
 
     <section>
         <div class="tile is-ancestor">
-            <div class="tile is-vertical box has-background-success-dark is-8">
+            <div class="tile is-vertical box has-background-success-dark is-10">
                 <div class="tile">
-                    <div class="tile is-parent is-vertical">
-                        <article class="tile is-child box">
-                            <p class="title"> List of events for current day </p>
+                    <div class="tile is-parent">
+                        <article class="tile is-child box is 6">
+                            <h2 class="title is-4 has-text-black has-text-weight-bold is-underlined">Current Event</h2>
                             <div id="currentEvent"></div>
                         </article>
                     </div>
-                    <div class="tile is-parent is-vertical">
-                        <article class="tile is-child box">
-                            <p class="title">Weather</p>
+                    <div class="tile is-parent">
+                        <article class="tile is-child is-12 box">
+                            <h3 class="title is-4 has-text-black is-underlined has-text-weight-bold">Current <br> Forecast
+                            </h3>
                             <div id="upcoming" class="weather-box"></div>
-
                         </article>
-
                     </div>
                 </div>
                 <div class="tile is-parent is-12">
                     <article class="tile is-child notification has-text-black">
-                        <p class="title"></p>
+                        <h3 class="title is-4 has-text-black is-underlined has-text-weight-bold">7 Day Forecast</h3>
                         <div class="content" id="forecast">
-                            <!-- Content --></div>
-    </section>
-
-
-
-    <section class="section">
-        <div class="container box">
-            <div class="columns is-mobile">
-                <div class="column is-full has-background-info-dark has-text-white">
-                    <div class="column is-6">
-                        <p>Schedule <br><br> Team Name <br><br> Year Schedule Including Wins & Losses</p>
-                    </div>
+                            <!-- Content -->
+                        </div>
+                        <button class="button is-danger has-text-black has-text-weight-bold	"><a
+                                href="https://www.ticketmaster.com/" target="_blank">
+                                Click here to purchase tickets!
+                            </a></button>
                 </div>
-            </div>
+                </article>
+                </article>
     </section>
 
-
-    <section class="section">
-        <div class="container box">
-            <div class="columns is-mobile">
-                <div class="column is-full has-background-link">
-                    <button class="button is-focused is-centered">
-                        <a href="https://www.ncaa.com/scoreboard/football/fbs">Click here to see live scores!</a>
-                    </button>
-                </div>
-            </div>
-    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+        </div>
+    </footer>
 
 
-<script src="assets/weather.js"></script>
+
+
+    <script src="assets/weather.js"></script>
 
 
 

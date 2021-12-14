@@ -10,11 +10,20 @@ section h6 {
 
 body {
     background-color: lightgrey;
+    height: 120vh;
 }
 
 .weather-box {
     background-color: blue;
     color: white;
+}
+
+.hero p {
+    text-align: center;
+}
+
+footer {
+    height: 120vh;
 }
 
 
