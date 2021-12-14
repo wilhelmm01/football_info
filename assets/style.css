@@ -26,7 +26,85 @@ footer {
     height: 120vh;
 }
 
+section h6 {
+    text-align: center;
+    font-style: bold;
+}
 
+.tile {
+    text-align: center;
+    margin: auto;
+}
+
+body {
+    background-color: lightgrey;
+    height: 120vh;
+}
+
+.weather-box {
+    background-color: blue;
+    color: white;
+}
+
+.hero p {
+    text-align: center;
+}
+
+footer {
+    height: 120vh;
+}
+
+.content {
+    display: inline-flex;
+    justify-content: space-between;
+    border: black;
+    border-color: black;
+    color: white;
+    font-size: small;
+}
+
+.content div {
+margin: 100 px;
+padding: 30px;
+border-color: white;
+border-width: 10px;
+
+}
+
+.content p {
+    font-size: small;
+    padding: 0px;
+    margin: 0;
+}
+
+.content div {
+    padding: 5px;
+    margin-left: 40px;
+    background-color: rgb(226, 220, 220);
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 125px;
+    font-size: large;
+    
+    
+    
+}
+
+.card h3 {
+    font-size: small;
+}
+.card {
+    padding: 2px;
+}
+
+.upcoming {
+    background-color: rgb(226, 220, 220);
+}
+.upcoming h2 {
+    font-size: larger;
+    font-weight: bold;
+}
 /*.hero {
     background-image: url(./images/football-870283_1920.jpg);
 }
