@@ -156,34 +156,38 @@ function getWeatherApi() {
 
         // Events for 5 day forecast
 
-        // var requestURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=3&sort=date,asc&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
-        //               // console.log("API Link: " + requestURL)  
-        //             fetch(requestURL)
-        //                 .then(function (response) {
-        //                     return response.json();
-        //                 })
-        //                 for (var i = 0; i < response.length; i++) {
-                            // var futureEvent = (data._embedded.events.name.response.length[i])
-                            // var futureStart = ()
-                            // var futureDate = ()
-                        // }
-
-                        
-        //                           //Creating the elements for display
-        //                     var eventName = document.createElement('h3');
-        //                     eventName.textContent =(data._embedded.events[0].name);
-        //                     var startTime = document.createElement('h4');
-        //                     startTime.textContent=(data._embedded.events[0].dates.start.localTime);
-        //                     var date = document.createElement('p');
-        //                     date.textContent=(data._embedded.events[0].dates.start.localDate);
-        //                     currentEvent.appendChild(eventName);
-        //                     currentEvent.appendChild(startTime);
-        //                     currentEvent.appendChild(date);
-        //                     currentEvent.appendChild(time);
-        //                 });
+        var requestURL3 = "https://app.ticketmaster.com/discovery/v2/events.json?size=3&sort=date,asc&startDateTime=" +dt +"&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
+        // console.log("API Link: " + requestURL)  
+        fetch(requestURL3)
     
-    }
- }     //5 day forecast
+        .then(function (response) {
+            console.log(response)
+            return response.json();
+        })
+        .then (function(data){
+            var ftrEvents = data._embedded.events;
+              // console.log(data);
+
+            for (var i=0; i < ftrEvents.length ; i++) {
+
+              //     var data = data.length
+        
+                    //Creating the elements for display
+            var eventName = document.createElement('p');
+            eventName.textContent =(data._embedded.events[i].name);
+            
+            var startTime = document.createElement('p');
+            startTime.textContent=(data._embedded.events[i].dates.start.localTime);
+            
+            var date = document.createElement('p');
+            date.textContent=(data._embedded.events[i].dates.start.localDate);
+            
+            currentEvent.appendChild(eventName);
+            currentEvent.appendChild(startTime);
+            currentEvent.appendChild(date);
+              // currentEvent.appendChild(time);
+        }
+      });     //5 day forecast
 
     
 
