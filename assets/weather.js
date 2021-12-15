@@ -208,37 +208,39 @@ function getWeatherApi() {
     }
 } //5 day forecase
 
-var requestURL3 = "https://app.ticketmaster.com/discovery/v2/events.json?size=3&sort=date,asc&startDateTime=" +dt +"&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
-// console.log("API Link: " + requestURL)  
-fetch(requestURL3)
+// var requestURL3 = "https://app.ticketmaster.com/discovery/v2/events.json?size=3&sort=date,asc&startDateTime=" +dt +"&city=" + city + "&apikey=aFemIeE1x3rB7wbi2X9ArZEygXHkEBuT";
+// // console.log("API Link: " + requestURL)  
+// fetch(requestURL3)
 
-.then(function (response) {
-    console.log(response)
-    return response.json();
-})
-.then (function(data){
-    var ftrEvents = data._embedded.events;
-      // console.log(data);
+// .then(function (response) {
+//     console.log(response)
+//     return response.json();
+// })
+// .then (function(data){
+//     var ftrEvents = data._embedded.events;
+//       // console.log(data);
 
-    for (var i=0; i < ftrEvents.length ; i++) {
+//     for (var i=0; i < ftrEvents.length ; i++) {
 
-      //     var data = data.length
+//       //     var data = data.length
 
-            //Creating the elements for display
-    var eventName = document.createElement('p');
-    eventName.textContent =(data._embedded.events[i].name);
+//             //Creating the elements for display
+//     var eventName = document.createElement('p');
+//     eventName.textContent =(data._embedded.events[i].name);
     
-    var startTime = document.createElement('p');
-    startTime.textContent=(data._embedded.events[i].dates.start.localTime);
+//     var startTime = document.createElement('p');
+//     startTime.textContent=(data._embedded.events[i].dates.start.localTime);
     
-    var date = document.createElement('p');
-    date.textContent=(data._embedded.events[i].dates.start.localDate);
+//     var date = document.createElement('p');
+//     date.textContent=(data._embedded.events[i].dates.start.localDate);
     
-    currentEvent.appendChild(eventName);
-    currentEvent.appendChild(startTime);
-    currentEvent.appendChild(date);
-      // currentEvent.appendChild(time);
-}
+//     currentEvent.appendChild(eventName);
+//     currentEvent.appendChild(startTime);
+//     currentEvent.appendChild(date);
+//       // currentEvent.appendChild(time);
+// }
+// }
+// )
 
 getWeatherApi();
 
