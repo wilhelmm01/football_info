@@ -38,20 +38,16 @@ section h6 {
 
 body {
     background-color: lightgrey;
-    height: 120vh;
+    height: 250vh;
 }
 
 .weather-box {
-    background-color: blue;
+    background-color: darkblue;
     color: white;
 }
 
 .hero p {
     text-align: center;
-}
-
-footer {
-    height: 120vh;
 }
 
 .content {
@@ -61,14 +57,14 @@ footer {
     border-color: black;
     color: white;
     font-size: small;
+    flex-wrap: wrap;
 }
 
 .content div {
-margin: 100 px;
-padding: 30px;
-border-color: white;
-border-width: 10px;
-
+    margin: 100 px;
+    padding: 30px;
+    border-color: white;
+    border-width: 10px;
 }
 
 .content p {
@@ -86,14 +82,13 @@ border-width: 10px;
     border-color: black;
     width: 125px;
     font-size: large;
-    
-    
-    
+    flex-wrap: wrap;
 }
 
 .card h3 {
     font-size: small;
 }
+
 .card {
     padding: 2px;
 }
@@ -101,10 +96,13 @@ border-width: 10px;
 .upcoming {
     background-color: rgb(226, 220, 220);
 }
+
 .upcoming h2 {
     font-size: larger;
     font-weight: bold;
 }
+
+
 /*.hero {
     background-image: url(./images/football-870283_1920.jpg);
 }
