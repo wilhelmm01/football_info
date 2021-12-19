@@ -125,6 +125,7 @@ function getWeatherApi() {
 
                 .then(function(response) {
                         console.log(response)
+                        currentEvent.innerHTML = ""
                         return response.json();
                     })
                     .then(function(data) {
